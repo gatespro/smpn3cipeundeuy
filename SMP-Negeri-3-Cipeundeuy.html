@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP Negeri 3 Cipeundeuy</title>
+    <style>
+        /* Global Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+        }
+
+        /* Header Styling */
+        header {
+            background: #333;
+            padding: 15px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo .logo-image {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .navbar .logo h1 {
+            color: #fff;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            background-image: url('https://github.com/gatespro/negachi/raw/main/main-background.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            font-size: 18px;
+            color: #333;
+        }
+
+        form input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        #daftarKegiatan {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #daftarKegiatan li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #daftarKegiatan li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: left;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        table td {
+            color: #333;
+            text-align: center;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://github.com/gatespro/negachi/raw/main/logo-sekolah.png" alt="Logo Sekolah" class="logo-image">
+                <h1>SMPN 3 Cipeundeuy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#kegiatan">Kegiatan</a></li>
+                    <li><a href="#absensi">Absensi</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Selamat Datang di SMPN 3 Cipeundeuy</h2>
+            <p>Membangun masa depan cemerlang dengan pendidikan berkualitas.</p>
+            <a href="#profil" class="cta-button">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!-- Profil Sekolah -->
+    <section id="profil" class="section">
+        <h2>Profil Sekolah</h2>
+        <p>SMPN 3 Cipeundeuy adalah lembaga pendidikan yang berfokus pada perkembangan siswa secara menyeluruh, menyediakan pendidikan yang holistik dan berbasis kompetensi.</p>
+    </section>
+
+    <!-- Program Sekolah -->
+    <section id="program" class="section">
+        <h2>Program Sekolah</h2>
+        <div class="program-list">
+            <div class="program">
+                <h3>Program 1</h3>
+                <p>Kurikulum berbasis kompetensi untuk menyiapkan siswa menghadapi tantangan dunia.</p>
+            </div>
+            <div class="program">
+                <h3>Program 2</h3>
+                <p>Fasilitas modern untuk mendukung proses belajar mengajar yang efektif.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kegiatan Sekolah -->
+    <section id="kegiatan" class="section">
+        <h2>Kegiatan Sekolah</h2>
+        <form id="formKegiatan">
+            <label for="kegiatanBaru">Tambah Kegiatan:</label>
+            <input type="text" id="kegiatanBaru" placeholder="Nama kegiatan" required>
+            <button type="submit">Tambah</button>
+        </form>
+        <ul id="daftarKegiatan">
+            <li>Kegiatan lomba olahraga</li>
+            <li>Hari Kebersihan Sekolah</li>
+        </ul>
+    </section>
+
+    <!-- Absensi -->
+    <section id="absensi" class="section">
+        <h2>Absensi</h2>
+        <div>
+            <h3>Absensi Siswa</h3>
+            <table id="absenSiswa">
+                <thead>
+                    <tr>
+                        <th>Nama Siswa</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div>
+            <h3>Absensi Guru</h3>
+            <table id="absenGuru">
+                <thead>
+                    <tr>
+                        <th>Nama Guru</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Kontak Sekolah -->
+    <section id="kontak" class="section">
+        <h2>Kontak Kami</h2>
+        <p>Alamat: Jl. PLTA Cirata KM.4 , Cipeundeuy</p>
+        <p>Email: smpn3cpdcirata@gmail.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SMPN 3 Cipeundeuy</p>
+    </footer>
+
+    <script>
+        // Tambah Kegiatan
+        const formKegiatan = document.getElementById('formKegiatan');
+        const daftarKegiatan = document.getElementById('daftarKegiatan');
+
+        formKegiatan.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const kegiatanBaru = document.getElementById('kegiatanBaru').value;
+            if (kegiatanBaru) {
+                const li = document.createElement('li');
+                li.textContent = kegiatanBaru;
+                daftarKegiatan.appendChild(li);
+                formKegiatan.reset();
+            }
+        });
+
+        // Tambah Absensi
+        const absenSiswa = document.getElementById('absenSiswa').querySelector('tbody');
+        const absenGuru = document.getElementById('absenGuru').querySelector('tbody');
+
+        const siswa = ['Ali', 'Budi', 'Citra'];
+        const guru = ['Pak Dedi', 'Bu Santi'];
+
+        siswa.forEach((nama) => {
+            const row = `<tr><td>${nama}</td><td>Hadir</td></tr>`;
+            absenSiswa.innerHTML += row;
+        });
+
+        guru.forEach((nama) => {
+            const row = `<tr><td>${nama}</td><td>Hadir</td></tr>`;
+            absenGuru.innerHTML += row;
+        });
+    </script>
+</body>
+</html>
